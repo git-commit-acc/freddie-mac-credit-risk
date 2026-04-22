@@ -1,0 +1,29 @@
+# PySpark with Java 8 compatibility
+pyspark>=3.3.0,<3.5.0
+pandas>=1.5.0
+numpy>=1.23.0
+scikit-learn>=1.2.0
+xgboost>=1.7.0
+lightgbm>=3.3.0
+scipy>=1.9.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+
+# Stage 1: Ingest (already worked)
+python pipeline_spark.py --stages ingest
+
+# Stage 2: Targets (after fixing)
+python pipeline_spark.py --stages targets
+
+# Stage 3: Features
+python pipeline_spark.py --stages features
+
+# Stage 4: Split
+python pipeline_spark.py --stages split
+
+# Stage 5: Train
+python pipeline_spark.py --stages train
+
+# Stage 6: Evaluate
+python pipeline_spark.py --stages evaluate
